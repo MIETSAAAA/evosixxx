@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐰 EVOSIX 🐰</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"  href="style.css">
+
+    <style>
+      :root {
+    --biru-tua: #1e3a8a;
+    --biru-muda: #60a5fa;
+    --putih: #ffffff;
+    --abu: #f9fafb;
+}
+section {
+  background: var(--abu);
+  transition: transform 0.3s ease, box-shadow 0.3s ease
+}
+
+section:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+section h2 {
+  background: rgba(96, 165, 250, .15);  /* biru-muda transparan */
+  display: inline-block;
+  padding: .2rem .8rem;
+  border-radius: 8px;
+}
+
+body { background: #f0f8ff; }
+
+.deskripsi,
+.tugas,
+.kontak,
+.galeri {
+  background: var(--putih);
+  border-radius: 16px;
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.05);
+}
+
+header {
+    background: var(--biru-tua);
+    color: var(--putih);
+    padding: 2rem 1rem;
+    text-align: center;
+    border-radius: 15px; 
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+nav {
+    
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 15px;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+nav a {
+    background-color: var(--putih);
+    color: var(--biru-tua);
+    padding: 0.5rem 1.2rem;
+    border-radius: 999px; /* biar kayak kapsul / tombol */
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    /* efek hover dihapus */
+}
+
+nav a:hover {
+    background-color: var(--biru-tua);
+    color: var(--putih);
+    transform: translateY(-2px); /* efek naik dikit pas hover */
+}
+
+
+.deskripsi {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: var(--putih);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  text-align: center;
+  background: var(--putih);
+}
+
+.deskripsi h2 {
+  font-size: 2rem;
+  color: var(--biru-tua);
+  margin-bottom: 1rem;
+}
+
+.deskripsi p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+.tugas {
+  text-align: center;
+  margin: 4rem auto;
+  padding: 2rem;
+}
+
+.grid-kelompok {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: #e6f0ff; /* biru pastel */
+  color: #1a2b5c; /* biru tua */
+  border-radius: 16px;
+  padding: 1.5rem 1.2rem;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+ transition: all 0.2s ease-in-out;
+  transform-origin: center;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.card:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.galeri {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f0f8ff;
+  background: #eaf3ff; 
+}
+
+.galeri h2 {
+  font-size: 2rem;
+  color: #1a2b5c;
+  margin-bottom: 2rem;
+}
+
+.galeri-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.galeri-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.kontak {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f0f8ff;
+  color: #1a2b5c;
+}
+
+.kontak h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.kontak p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.kontak-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.kontak-card {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  width: 300px;
+  text-align: left;
+   transition: all 0.2s ease-in-out;
+  transform-origin: center;
+  cursor: pointer;
+
+}
+
+ .kontak-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.kontak-card:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+ 
+
+.ig-icon {
+  font-size: 2rem;
+  color: #e1306c; 
+}
+
+.kontak-card a {
+  color: #1a2b5c;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.kontak-card p {
+  font-size: 0.95rem;
+  margin: 0.4rem 0 0;
+}
+
+    </style>
+
+</head>
+<body>
+ <header>
+    <h1> 🐰 EVOSIX 🐰</h1>
+    <nav>
+        <a href="#home">home</a>
+        <a href="#tugas">tugas</a>
+        <a href="#galeri">galeri</a>
+        <a href="#kontak">Kontak</a>
+    </nav>
+</header>
+
+<section id="home" class="deskripsi">
+    <h2> ABOUT US </h2>
+<p> kelas yang isinya rame banget, kadang chaos, kadang ada dramanya , kadang juga nangis bareng, tapi begitulah kelas kami...
+    isinya lengkap : ada yang lucu, ada yang pinter, ada yang serius dan semuanya luar biasa 🫶🏼
+</p>
+
+</section>
+
+
+<section id="tugas" class="tugas">
+  <h2>🌐 Tugas Web Kelompok 🌐</h2>
+  <div class="grid-kelompok">
+    <a href="https://hydroclean.vercel.app/" target="_blank" class="card">
+      <h3>Kelompok 1: HydroClean 💧</h3>
+      <p>Pembersih air sederhana ramah lingkungan</p>
+    </a>
+    <a href="https://dispenser-rekayadanteknologi.vercel.app/" target="_blank" class="card">
+      <h3>Kelompok 2: Dispenser Otomatis 🚰</h3>
+      <p>Dispenser tanpa sentuh, lebih higienis!</p>
+    </a>
+    <a href="https://ourcucumsoap.vercel.app/" target="_blank" class="card">
+      <h3>Kelompok 3: CucumSoap 🥒🧼</h3>
+      <p>Sabun alami dari timun segar!</p>
+    </a>
+    <a href="https://kipas-tenaga-surya.vercel.app" target="_blank" class="card">
+      <h3>Kelompok 4: Kipas Tenaga Surya 🌞🌀</h3>
+      <p>Solusi adem tanpa listrik!</p>
+    </a>
+   <a href="https://zapsweepppp.vercel.app/" target="_blank" class="card">
+   <h3>Kelompok 5 : Sapu Elektrik 🧹⚡️  </h3>
+   <p> bersih-bersih cepat dan praktis</p>
+   </a>
+  </div>
+</section>
+
+<section id="galeri" class="galeri">
+  <h2>📸 Galeri Kenangan 📸</h2>
+  <div class="galeri-grid">
+    <img src="img\kenangan.jpeg" alt="Foto 1" />
+    <img src="img\kenangan (2).jpeg" alt="Foto 2" />
+    <img src="img\kenangan (3).jpeg" alt="Foto 3" />
+    <img src="img\kenangan (4).jpeg" alt="Foto 4" />
+    <img src="img\kenangan (5).jpeg" alt="Foto 5" />
+    <img src="img/kenangan (6).jpeg" alt="Foto 6" />
+    <img src="img/kenangan (7).jpeg" alt="Foto 7" />
+  </div>
+</section>
+
+<section id="kontak" class="kontak">
+  <h2>📬 Kontak Instagram Kelas 📬</h2>
+  <p>Follow dua akun Instagram kami ya! Seru-seruan dan info resmi ✨</p>
+
+  <div class="kontak-info">
+   
+    <div class="kontak-card">
+      <i class="fa-brands fa-instagram ig-icon"></i>
+      <div>
+        <a href="https://www.instagram.com/evoosix/" target="_blank">@evoosix</a>
+        <p> Info resmi seputar kelas 📚</p>
+      </div>
+    </div>
+
+   
+    <div class="kontak-card">
+      <i class="fa-brands fa-instagram ig-icon"></i>
+      <div>
+        <a href="https://www.instagram.com/ev6zone/" target="_blank">@ev6zone</a>
+        <p>Akun candid & momen seru 💐</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
